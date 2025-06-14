@@ -48,7 +48,7 @@
         .exercise-title-container {
           display: flex;
           align-items: center;
-          gap: 15px; /* Controls the space between name and timer */
+          gap: 15px;
         }
 
         .exercise-title {
@@ -186,6 +186,31 @@
         </div>
         <a href="https://www.youtube.com/watch?v=Xyd_fa5zoEU" class="tutorial-link" target="_blank">Watch Tutorial</a>
     </div>
+
+    <!-- Heel Touches -->
+    <div class="exercise-card">
+        <div class="exercise-header">
+            <div class="exercise-title-container">
+                <h3 class="exercise-title">Heel Touches</h3>
+                <span class="timer" id="timer6">00:30</span>
+            </div>
+            <button onclick="startWorkout(30, 'timer6', this)">Start</button>
+        </div>
+        <a href="https://youtube.com/shorts/i-BBrCVNT9A?si=msBE4Xf52H9rDItq" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
+    <!-- High Stepping -->
+    <div class="exercise-card">
+        <div class="exercise-header">
+            <div class="exercise-title-container">
+                <h3 class="exercise-title">High Stepping</h3>
+                <span class="timer" id="timer7">00:30</span>
+            </div>
+            <button onclick="startWorkout(30, 'timer7', this)">Start</button>
+        </div>
+        <a href="https://youtube.com/shorts/eUCjiHRa05c?si=nboYK8MOiQ6x9ZoE" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
 </div>
 
 <!-- Nutrition Table -->
@@ -224,39 +249,51 @@
         <td>2.5</td>
         <td>70</td>
     </tr>
+    <tr>
+        <td>Oats (1/2 cup)</td>
+        <td>5</td>
+        <td>150</td>
+    </tr>
+    <tr>
+        <td>Tofu (100g)</td>
+        <td>8</td>
+        <td>76</td>
+    </tr>
+    <tr>
+        <td>Avocado (1/2 fruit)</td>
+        <td>2</td>
+        <td>120</td>
+    </tr>
     </tbody>
 </table>
 
 <script>
-    let activeInterval = null;
+    let activeInterval = null
 
-    function startWorkout(duration, timerId, button) {
-      if (activeInterval) clearInterval(activeInterval);
+  function startWorkout(duration, timerId, button) {
+    if (activeInterval) clearInterval(activeInterval);
 
-      // Reset all timers and buttons
-      document.querySelectorAll('.timer').forEach(t => t.textContent = "00:30");
-      document.querySelectorAll('button').forEach(btn => {
-        btn.disabled = false;
-        btn.textContent = "Start";
-      });
+    // Reset all timers and buttons
+    document.querySelectorAll('.timer').forEach(t => t.textContent = "00:30");
+    document.querySelectorAll('button').forEach(btn => {
+      btn.disabled = false;
+      btn.textContent = "Start";
+    });
 
-      let timer = duration;
-      const display = document.getElementById(timerId);
-      button.disabled = true;
-      button.textContent = "Running...";
+    let timer = duration;
+    const display = document.getElementById(timerId);
+    button.disabled = true;
+    button.textContent = "Running...";
 
-      activeInterval = setInterval(() => {
-        const seconds = timer % 60;
-        display.textContent = `00:${seconds < 10 ? '0' + seconds : seconds}`;
-        if (--timer < 0) {
-          clearInterval(activeInterval);
-          display.textContent = "Done!";
-          button.disabled = false;
-          button.textContent = "Restart";
-        }
-      }, 1000);
-    }
+    activeInterval = setInterval(() => {
+      const seconds = timer % 60;
+      display.textContent = `00:${seconds < 10 ? '0' + seconds : seconds}`;
+      if (--timer < 0) {
+        clearInterval(activeInterval);
+        display.textContent = "Done!";
+        button.disabled = false;
+        button.textContent = "Restart";
+      }
+    }, 1000);
+  }
 </script>
-
-</body>
-</html>

@@ -112,13 +112,11 @@
 
 <div class="workout-container">
 
-    <!-- Reverse Crunches -->
     <div class="exercise-card">
         <div class="exercise-title">Reverse Crunches – 20 reps</div>
         <a href="https://www.youtube.com/watch?v=hyv14e2QDq0" class="tutorial-link" target="_blank">Watch Tutorial</a>
     </div>
 
-    <!-- Flutter Kicks -->
     <div class="exercise-card">
         <div class="exercise-title">Flutter Kicks – 30 sec</div>
         <div class="timer-start-container">
@@ -128,7 +126,6 @@
         <a href="https://www.youtube.com/watch?v=K0zN3UuB3oM" class="tutorial-link" target="_blank">Watch Tutorial</a>
     </div>
 
-    <!-- Mountain Climbers -->
     <div class="exercise-card">
         <div class="exercise-title">Mountain Climbers – 30 sec</div>
         <div class="timer-start-container">
@@ -138,13 +135,11 @@
         <a href="https://www.youtube.com/watch?v=nmwgirgXLYM" class="tutorial-link" target="_blank">Watch Tutorial</a>
     </div>
 
-    <!-- Heel Touches -->
     <div class="exercise-card">
         <div class="exercise-title">Heel Touches – 20 reps</div>
         <a href="https://www.youtube.com/watch?v=Z1QJnTZ6XhU" class="tutorial-link" target="_blank">Watch Tutorial</a>
     </div>
 
-    <!-- Plank -->
     <div class="exercise-card">
         <div class="exercise-title">Plank – 30 sec</div>
         <div class="timer-start-container">
@@ -154,10 +149,26 @@
         <a href="https://www.youtube.com/watch?v=pSHjTRCQxIw" class="tutorial-link" target="_blank">Watch Tutorial</a>
     </div>
 
+    <!-- Added Exercises -->
+    <div class="exercise-card">
+        <div class="exercise-title">V Crunch – 14 reps</div>
+        <a href="https://youtube.com/shorts/MNzNeH--Pgs?si=_QC2C9zciWvLfgmB" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
+    <div class="exercise-card">
+        <div class="exercise-title">Alternate V-Up – 14 reps</div>
+        <a href="https://youtube.com/shorts/fzyrJ2kwrKw?si=d6J5JMMhKsqloKwk" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
+    <div class="exercise-card">
+        <div class="exercise-title">Clapping Crunches – 20 reps</div>
+        <a href="https://youtu.be/LUQt2wSOFNM?si=CTSpndicy1hysYRW" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
 </div>
 
 <!-- Nutrition Table -->
-<h2>🥗 Nutrition </h2>
+<h2>🥗 Nutrition</h2>
 <table>
     <thead>
     <tr>
@@ -192,6 +203,31 @@
         <td>12</td>
         <td>150</td>
     </tr>
+    <tr>
+        <td>Boiled Chickpeas (1 cup)</td>
+        <td>15</td>
+        <td>270</td>
+    </tr>
+    <tr>
+        <td>Cottage Cheese (100g)</td>
+        <td>11</td>
+        <td>98</td>
+    </tr>
+    <tr>
+        <td>Almonds (10 pcs)</td>
+        <td>2.5</td>
+        <td>70</td>
+    </tr>
+    <tr>
+        <td>Tofu (100g)</td>
+        <td>10</td>
+        <td>144</td>
+    </tr>
+    <tr>
+        <td>Skim Milk (1 cup)</td>
+        <td>8</td>
+        <td>83</td>
+    </tr>
     </tbody>
 </table>
 
@@ -201,11 +237,11 @@
     function startWorkout(duration, timerId, button) {
       if (activeInterval) clearInterval(activeInterval);
 
-      // Reset all timers and buttons
-      document.querySelectorAll('.timer').forEach(t => t.textContent = "00:40");
       document.querySelectorAll('button').forEach(btn => {
-        btn.disabled = false;
-        btn.textContent = "Start";
+        if (btn !== button) {
+          btn.disabled = false;
+          btn.textContent = "Start";
+        }
       });
 
       let timer = duration;

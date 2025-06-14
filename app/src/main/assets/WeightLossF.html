@@ -1,4 +1,3 @@
-<!-- Save as maleWeightLoss.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,23 +40,27 @@
 
         .exercise-header {
           display: flex;
-          align-items: center;
           justify-content: space-between;
-          user-select: none;
+          align-items: center;
+          flex-wrap: wrap;
         }
 
-        .exercise-header h3 {
-          margin: 0;
+        .exercise-title-container {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+        }
+
+        .exercise-title {
           font-size: 22px;
           color: #003d7a;
+          margin: 0;
         }
 
         .timer {
-          font-size: 20px;
+          font-size: 18px;
           font-weight: bold;
-          color: #333;
-          min-width: 70px;
-          text-align: right;
+          color: #007bff;
         }
 
         button {
@@ -107,6 +110,13 @@
           .exercise-header {
             flex-direction: column;
             align-items: flex-start;
+            gap: 10px;
+          }
+
+          .exercise-title-container {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
           }
         }
     </style>
@@ -116,12 +126,15 @@
 <h1>Male Weight Loss Workout</h1>
 
 <div class="workout-container">
+
     <!-- Jumping Jacks -->
     <div class="exercise-card">
         <div class="exercise-header">
-            <h3>Jumping Jacks</h3>
-            <div id="timer1" class="timer">00:30</div>
-            <button onclick="startWorkout(30, 'timer1', this)">Start</button>
+            <div class="exercise-title-container">
+                <h3 class="exercise-title">Jumping Jacks</h3>
+                <span class="timer" id="timer1">00:20</span>
+            </div>
+            <button onclick="startWorkout(20, 'timer1', this)">Start</button>
         </div>
         <a href="https://www.youtube.com/watch?v=c4DAnQ6DtF8" class="tutorial-link" target="_blank">Watch Tutorial</a>
     </div>
@@ -129,29 +142,35 @@
     <!-- Bicycle Crunches -->
     <div class="exercise-card">
         <div class="exercise-header">
-            <h3>Bicycle Crunches</h3>
-            <div id="timer2" class="timer">00:30</div>
-            <button onclick="startWorkout(30, 'timer2', this)">Start</button>
+            <div class="exercise-title-container">
+                <h3 class="exercise-title">Bicycle Crunches</h3>
+                <span class="timer" id="timer2">00:20</span>
+            </div>
+            <button onclick="startWorkout(20, 'timer2', this)">Start</button>
         </div>
         <a href="https://www.youtube.com/watch?v=9FGilxCbdz8" class="tutorial-link" target="_blank">Watch Tutorial</a>
     </div>
 
-    <!-- Glute Bridge -->
+    <!-- Russian Twist -->
     <div class="exercise-card">
         <div class="exercise-header">
-            <h3>Glute Bridge</h3>
-            <div id="timer3" class="timer">00:30</div>
-            <button onclick="startWorkout(30, 'timer3', this)">Start</button>
+            <div class="exercise-title-container">
+                <h3 class="exercise-title">Russian Twist</h3>
+                <span class="timer" id="timer3">00:20</span>
+            </div>
+            <button onclick="startWorkout(20, 'timer3', this)">Start</button>
         </div>
-        <a href="https://www.youtube.com/watch?v=wPM8icPu6H8" class="tutorial-link" target="_blank">Watch Tutorial</a>
+        <a href="https://www.youtube.com/watch?v=wkD8rjkodUI" class="tutorial-link" target="_blank">Watch Tutorial</a>
     </div>
 
     <!-- Plank -->
     <div class="exercise-card">
         <div class="exercise-header">
-            <h3>Plank</h3>
-            <div id="timer4" class="timer">00:30</div>
-            <button onclick="startWorkout(30, 'timer4', this)">Start</button>
+            <div class="exercise-title-container">
+                <h3 class="exercise-title">Plank</h3>
+                <span class="timer" id="timer4">00:20</span>
+            </div>
+            <button onclick="startWorkout(20, 'timer4', this)">Start</button>
         </div>
         <a href="https://www.youtube.com/watch?v=pSHjTRCQxIw" class="tutorial-link" target="_blank">Watch Tutorial</a>
     </div>
@@ -159,12 +178,39 @@
     <!-- Crunches -->
     <div class="exercise-card">
         <div class="exercise-header">
-            <h3>Crunches</h3>
-            <div id="timer5" class="timer">00:30</div>
-            <button onclick="startWorkout(30, 'timer5', this)">Start</button>
+            <div class="exercise-title-container">
+                <h3 class="exercise-title">Crunches</h3>
+                <span class="timer" id="timer5">00:20</span>
+            </div>
+            <button onclick="startWorkout(20, 'timer5', this)">Start</button>
         </div>
         <a href="https://www.youtube.com/watch?v=Xyd_fa5zoEU" class="tutorial-link" target="_blank">Watch Tutorial</a>
     </div>
+
+    <!-- Heel Touches -->
+    <div class="exercise-card">
+        <div class="exercise-header">
+            <div class="exercise-title-container">
+                <h3 class="exercise-title">Heel Touches</h3>
+                <span class="timer" id="timer6">00:20</span>
+            </div>
+            <button onclick="startWorkout(20, 'timer6', this)">Start</button>
+        </div>
+        <a href="https://youtube.com/shorts/i-BBrCVNT9A?si=msBE4Xf52H9rDItq" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
+    <!-- High Stepping -->
+    <div class="exercise-card">
+        <div class="exercise-header">
+            <div class="exercise-title-container">
+                <h3 class="exercise-title">High Stepping</h3>
+                <span class="timer" id="timer7">00:20</span>
+            </div>
+            <button onclick="startWorkout(20, 'timer7', this)">Start</button>
+        </div>
+        <a href="https://youtube.com/shorts/eUCjiHRa05c?si=nboYK8MOiQ6x9ZoE" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
 </div>
 
 <!-- Nutrition Table -->
@@ -203,38 +249,51 @@
         <td>2.5</td>
         <td>70</td>
     </tr>
+    <tr>
+        <td>Oats (1/2 cup)</td>
+        <td>5</td>
+        <td>150</td>
+    </tr>
+    <tr>
+        <td>Tofu (100g)</td>
+        <td>8</td>
+        <td>76</td>
+    </tr>
+    <tr>
+        <td>Avocado (1/2 fruit)</td>
+        <td>2</td>
+        <td>120</td>
+    </tr>
     </tbody>
 </table>
 
 <script>
-    let activeInterval = null;
+    let activeInterval = null
 
-    function startWorkout(duration, timerId, button) {
-      if (activeInterval) clearInterval(activeInterval);
+  function startWorkout(duration, timerId, button) {
+    if (activeInterval) clearInterval(activeInterval);
 
-      document.querySelectorAll('.timer').forEach(t => t.textContent = "00:30");
-      document.querySelectorAll('button').forEach(btn => {
-        btn.disabled = false;
-        btn.textContent = "Start";
-      });
+    // Reset all timers and buttons
+    document.querySelectorAll('.timer').forEach(t => t.textContent = "00:30");
+    document.querySelectorAll('button').forEach(btn => {
+      btn.disabled = false;
+      btn.textContent = "Start";
+    });
 
-      let timer = duration;
-      const display = document.getElementById(timerId);
+    let timer = duration;
+    const display = document.getElementById(timerId);
+    button.disabled = true;
+    button.textContent = "Running...";
 
-      button.disabled = true;
-      button.textContent = "Running...";
-
-      activeInterval = setInterval(() => {
-        const seconds = timer % 60;
-        display.textContent = `00:${seconds < 10 ? '0' + seconds : seconds}`;
-        if (--timer < 0) {
-          clearInterval(activeInterval);
-          display.textContent = "Done!";
-          button.disabled = false;
-          button.textContent = "Restart";
-        }
-      }, 1000);
-    }
+    activeInterval = setInterval(() => {
+      const seconds = timer % 60;
+      display.textContent = `00:${seconds < 10 ? '0' + seconds : seconds}`;
+      if (--timer < 0) {
+        clearInterval(activeInterval);
+        display.textContent = "Done!";
+        button.disabled = false;
+        button.textContent = "Restart";
+      }
+    }, 1000);
+  }
 </script>
-</body>
-</html>
