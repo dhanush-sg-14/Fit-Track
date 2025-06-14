@@ -1,6 +1,6 @@
 # 💪 FitTrack - Fitness & Diet App
 
-Welcome to *FitTrack* – your all-in-one companion for fitness tracking, workout planning, and diet management. Whether you're trying to build muscle, lose weight, or just stay active and healthy, FitTrack helps you stay on top of your goals.
+Welcome to *FitTrack* – your all-in-one companion for fitness tracking, workout planning, and diet management. Whether you're trying to build muscle, lose weight, or just stay active and healthy, FitTrack helps you stay on top of your goals.Stay healthy ✨,Stay Strong 🔥
 
 
 
