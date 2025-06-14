@@ -9,28 +9,12 @@ Welcome to *FitTrack* – your all-in-one companion for fitness tracking, workou
 ## 📱 Features
 
 - 👤 *User Authentication*
-  - Sign up and log in with secure authentication (Firebase or custom backend)
+  - Sign up and log in with secure authentication
 - 🏋‍♂ *Personalized Workouts*
   - Choose workouts based on your fitness level and goal
 - 🥗 *Diet Plans*
   - Get daily meal plans based on your preferences
 
-
----
-
-## 📸 Screenshots
-
-### 🏠 Home Screen
-![Home Screen](./screenshots/home.png)
-
-### 🏋 Workout Plans
-![Workout Plans](./screenshots/workouts.png)
-
-### 🥗 Diet Plan
-![Diet Screen](./screenshots/diet.png)
-
-### 📈 Progress Tracker
-![Progress Tracker](./screenshots/progress.png)
 
 ---
 
