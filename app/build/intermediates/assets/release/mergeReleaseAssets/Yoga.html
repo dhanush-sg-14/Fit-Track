@@ -150,10 +150,28 @@
         <a href="https://youtube.com/shorts/i8ynz665Ty8?si=tuqB6fOWqezZsup1" class="tutorial-link" target="_blank">Watch Tutorial</a>
     </div>
 
+    <!-- Puppy Pose -->
+    <div class="exercise-card">
+        <div class="exercise-title">Puppy Pose – 10 reps</div>
+        <a href="https://youtube.com/shorts/VG160KYj0sg?si=wGahLMYT5ea_TvdG" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
+    <!-- High Lunge Pose -->
+    <div class="exercise-card">
+        <div class="exercise-title">High Lunge Pose – 10 reps each side</div>
+        <a href="https://youtu.be/eLx9pyYLrYE?si=9_fWiAe_eXisDSGc" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
+    <!-- Low Lunge Pose -->
+    <div class="exercise-card">
+        <div class="exercise-title">Low Lunge Pose – 10 reps each side</div>
+        <a href="https://youtu.be/-Rprn7V7qgo?si=JofKZYVozgBDDv_f" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
 </div>
 
 <!-- Nutrition Table -->
-<h2>🥗 Nutrition </h2>
+<h2>🥗 Nutrition</h2>
 <table>
     <thead>
     <tr>
@@ -194,47 +212,76 @@
         <td>51</td>
         <td>457</td>
     </tr>
+    <tr>
+        <td>Kale (1 cup cooked)</td>
+        <td>179</td>
+        <td>30</td>
+        <td>296</td>
+    </tr>
+    <tr>
+        <td>Chia Seeds (1 oz)</td>
+        <td>179</td>
+        <td>95</td>
+        <td>115</td>
+    </tr>
+    <tr>
+        <td>Avocado (1 medium)</td>
+        <td>18</td>
+        <td>58</td>
+        <td>708</td>
+    </tr>
+    <tr>
+        <td>Edamame (1 cup cooked)</td>
+        <td>98</td>
+        <td>99</td>
+        <td>676</td>
+    </tr>
+    <tr>
+        <td>Dried Figs (5 pieces)</td>
+        <td>90</td>
+        <td>25</td>
+        <td>270</td>
+    </tr>
     </tbody>
 </table>
 
-<script>
-    let activeInterval = null;
+  <script>
+      let activeInterval = null;
 
-    function startWorkout(duration, timerId, button) {
-      if (activeInterval) clearInterval(activeInterval);
+      function startWorkout(duration, timerId, button) {
+        if (activeInterval) clearInterval(activeInterval);
 
-      // Reset all timers and buttons
-      document.querySelectorAll('.timer').forEach(t => {
-        const defaultTimes = {
-          timer1: '00:30',
-          timer2: '00:30',
-          timer3: '00:40',
-          timer4: '00:40',
-          timer5: '00:40',
-        };
-        t.textContent = defaultTimes[t.id] || "00:30";
-      });
-      document.querySelectorAll('button').forEach(btn => {
-        btn.disabled = false;
-        btn.textContent = "Start";
-      });
+        // Reset all timers and buttons
+        document.querySelectorAll('.timer').forEach(t => {
+          const defaultTimes = {
+            timer1: '00:30',
+            timer2: '00:30'
+            // Add more if you introduce new timers
+          };
+          t.textContent = defaultTimes[t.id] || "00:30";
+        });
 
-      let timer = duration;
-      const display = document.getElementById(timerId);
-      button.disabled = true;
-      button.textContent = "Running...";
+        document.querySelectorAll('button').forEach(btn => {
+          btn.disabled = false;
+          btn.textContent = "Start";
+        });
 
-      activeInterval = setInterval(() => {
-        const seconds = timer % 60;
-        display.textContent = `00:${seconds < 10 ? '0' + seconds : seconds}`;
-        if (--timer < 0) {
-          clearInterval(activeInterval);
-          display.textContent = "Done!";
-          button.disabled = false;
-          button.textContent = "Restart";
-        }
-      }, 1000);
-    }
+        let timer = duration;
+        const display = document.getElementById(timerId);
+        button.disabled = true;
+        button.textContent = "Running...";
+
+        activeInterval = setInterval(() => {
+          const seconds = timer % 60;
+          display.textContent = `00:${seconds < 10 ? '0' + seconds : seconds}`;
+          if (--timer < 0) {
+            clearInterval(activeInterval);
+            display.textContent = "Done!";
+            button.disabled = false;
+            button.textContent = "Restart";
+          }
+        }, 1000);
+      }
 </script>
 
 </body>
