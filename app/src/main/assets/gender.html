@@ -5,26 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Select Gender - FitTrack</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        .gender-options {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          margin-top: 20px;
+        }
+
+        .gender-btn {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 20px;
+          border: 2px solid #333;
+          border-radius: 8px;
+          background-color: #f0f0f0;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+
+        .gender-btn.selected {
+          background-color: #d0f0ff;
+          border-color: #007bff;
+        }
+
+        .gender-btn img {
+          width: 60px;
+          height: 60px;
+        }
+
+        .gender-btn span {
+          font-size: 18px;
+          font-weight: 500;
+        }
+
+        button#nextBtn {
+          margin-top: 30px;
+          padding: 10px 25px;
+          font-size: 16px;
+          border-radius: 6px;
+          cursor: pointer;
+        }
+    </style>
 </head>
 <body class="gender-body">
 <div class="gender-container">
     <h2>Select Your Gender</h2>
+
     <div class="gender-options">
-        <div class="gender-box" onclick="selectGender('Male')">
+        <button class="gender-btn" onclick="selectGender('male', this)">
             <img src="https://img.icons8.com/ios-filled/100/000000/male.png" alt="Male" />
             <span>Male</span>
-        </div>
-        <div class="gender-box" onclick="selectGender('Female')">
+        </button>
+
+        <button class="gender-btn" onclick="selectGender('female', this)">
             <img src="https://img.icons8.com/ios-filled/100/000000/female.png" alt="Female" />
             <span>Female</span>
-        </div>
+        </button>
+    </div>
+
+    <div style="text-align: center;">
+        <button id="nextBtn" onclick="goToDetails()">Next</button>
     </div>
 </div>
 
 <script>
-    function selectGender(gender) {
+    let selectedGender = null;
+
+    function selectGender(gender, element) {
+      selectedGender = gender;
       localStorage.setItem("userGender", gender);
-      window.location.href = "details.html"; // ➡️ Move to next page
+
+      // Remove 'selected' from all buttons
+      document.querySelectorAll('.gender-btn').forEach(btn =>
+        btn.classList.remove('selected')
+      );
+
+      // Add 'selected' to clicked button
+      element.classList.add('selected');
+    }
+
+    function goToDetails() {
+      if (!selectedGender) {
+        alert("Please select your gender.");
+        return;
+      }
+
+      if (selectedGender === 'male') {
+        window.location.href = "maleWorkout.html";
+      } else if (selectedGender === 'female') {
+        window.location.href = "femaleWorkout.html";
+      }
     }
 </script>
 </body>
