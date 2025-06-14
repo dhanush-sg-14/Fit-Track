@@ -15,7 +15,6 @@ Welcome to *FitTrack* – your all-in-one companion for fitness tracking, workou
 - 🥗 *Diet Plans*
   - Get daily meal plans based on your preferences
 
-
 ---
 
 ## 🛠 Installation
