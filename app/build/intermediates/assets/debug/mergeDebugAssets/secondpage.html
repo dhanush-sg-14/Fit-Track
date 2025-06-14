@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sign Up - FitTrack</title>
+    <link rel="stylesheet" href="second.css" />
+</head>
+<body class="signup-body">
+<div class="form-container">
+    <h2>Fitness Guide - Sign Up</h2>
+    <form onsubmit="saveSignup(event)">
+        <input type="text" id="signup-name" placeholder="Full Name" required />
+        <input type="text" id="signup-contact" placeholder="Mobile or Email" required />
+        <input type="password" id="signup-password" placeholder="Password" required />
+        <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="secondpage.html">Login here</a></p>
+</div>
+
+<script>
+    function saveSignup(event) {
+      event.preventDefault();
+
+      // Get form input values
+      const name = document.getElementById("signup-name").value.trim();
+      const contact = document.getElementById("signup-contact").value.trim();
+      const password = document.getElementById("signup-password").value.trim();
+
+      // Simple validation
+      if (name && contact && password) {
+        // Redirect to gender selection page
+        window.location.href = "gender.html";
+      } else {
+        alert("Please fill out all fields.");
+      }
+    }
+</script>
+</body>
+</html>

@@ -18,11 +18,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        webView = findViewById(R.id.webView);
-        webView.setWebViewClient(new WebViewClient());
+        WebView webView = findViewById(R.id.webView); // Make sure you have this in your layout
+        webView.getSettings().setJavaScriptEnabled(true);
+
+        // Load FIRST page (index.html)
         webView.loadUrl("file:///android_asset/index.html");
 
-        // Handle back button press using OnBackPressedDispatcher
         this.getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
@@ -34,4 +35,6 @@ public class MainActivity extends AppCompatActivity {
    }
 });
     }
+
+
 }

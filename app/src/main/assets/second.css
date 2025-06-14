@@ -1,0 +1,232 @@
+/* === Base Styles === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* === Common Container === */
+.container, .form-container, .form-box, .gender-container, .index-container {
+  background: #fff;
+  padding: 30px 35px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+h2, .heading {
+  font-size: 2rem;
+  color: #0072ff;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* === Inputs & Buttons === */
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button, .next-btn {
+  background-color: #0072ff;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, .next-btn:hover {
+  background-color: #005ad1;
+}
+
+/* === Index Page === */
+.index-body {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+/* === Login Page === */
+.login-body {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+/* === Signup Page === */
+.signup-body {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+
+/* === Gender Selection === */
+.gender-body {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+.gender-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gender-box {
+  border: 2px solid #0072ff;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #f0f8ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gender-box:hover {
+  background-color: #0072ff;
+  color: white;
+}
+
+.gender-box img {
+  width: 40px;
+  height: 40px;
+}
+
+.gender-box span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* === Personal Details Page === */
+.details-body {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  padding: 20px;
+}
+
+.input-card {
+  background: #f2f8ff;
+  border: 2px solid #0072ff;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-card label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: #0072ff;
+}
+
+.value-box {
+  background-color: #0072ff;
+  color: white;
+  padding: 10px;
+  width: 60px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* === Goal Selection Page === */
+.workout-body {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  flex-direction: column;
+  padding: 30px 20px;
+}
+
+.goal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 700px;
+}
+
+.goal-box {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+  border: 3px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.goal-box span {
+  font-size: 26px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 6px black;
+  background-color: rgba(0, 0, 0, 0.45);
+  padding: 10px 20px;
+  border-radius: 12px;
+}
+
+.goal-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.goal-box.selected {
+  border: 3px solid #00cc99;
+  box-shadow: 0 0 12px #00cc9977;
+}
+
+/* === Plan Display === */
+.plan-box {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+/* === Responsive === */
+@media (max-width: 480px) {
+  .form-box, .container {
+    padding: 20px 15px;
+  }
+
+  h2, .heading {
+    font-size: 1.5rem;
+  }
+
+  .value-box {
+    width: 50px;
+    padding: 8px;
+  }
+
+  .next-btn {
+    width: 100%;
+  }
+}
+
