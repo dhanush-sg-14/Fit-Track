@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Strength Workout - FitTrack</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background: linear-gradient(to right, #f0f4f7, #e0f7fa);
+          margin: 0;
+          padding: 20px;
+        }
+
+        h1, h2 {
+          text-align: center;
+          color: #007bff;
+          margin-bottom: 20px;
+        }
+
+        .workout-container {
+          max-width: 700px;
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+        }
+
+        .exercise-card {
+          background-color: #fff;
+          border: 2px solid #007bff;
+          border-radius: 10px;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .exercise-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .exercise-header h3 {
+          margin: 0;
+          font-size: 22px;
+          color: #003d7a;
+        }
+
+        .reps {
+          font-weight: bold;
+          color: #007bff;
+          margin-left: 10px;
+          font-size: 18px;
+        }
+
+        a.tutorial-link {
+          color: #007bff;
+          font-weight: 500;
+          text-decoration: none;
+        }
+
+        a.tutorial-link:hover {
+          text-decoration: underline;
+        }
+
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 40px;
+        }
+
+        th, td {
+          padding: 12px;
+          border: 1px solid #007bff;
+          text-align: center;
+        }
+
+        th {
+          background-color: #007bff;
+          color: white;
+        }
+
+        @media(max-width: 720px) {
+          .exercise-header {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Strength Workout</h1>
+
+<div class="workout-container">
+
+    <div class="exercise-card">
+        <div class="exercise-header">
+            <h3>Push Ups <span class="reps">10x</span></h3>
+        </div>
+        <a href="https://www.youtube.com/watch?v=IODxDxX7oi4" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
+    <div class="exercise-card">
+        <div class="exercise-header">
+            <h3>Pull Ups <span class="reps">10x</span></h3>
+        </div>
+        <a href="https://www.youtube.com/watch?v=eGo4IYlbE5g" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
+    <div class="exercise-card">
+        <div class="exercise-header">
+            <h3>Squats <span class="reps">10x</span></h3>
+        </div>
+        <a href="https://www.youtube.com/watch?v=aclHkVaku9U" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
+    <div class="exercise-card">
+        <div class="exercise-header">
+            <h3>Shoulder Press <span class="reps">10x</span></h3>
+        </div>
+        <a href="https://www.youtube.com/watch?v=qEwKCR5JCog" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
+    <div class="exercise-card">
+        <div class="exercise-header">
+            <h3>Dead Lift <span class="reps">10x</span></h3>
+        </div>
+        <a href="https://www.youtube.com/watch?v=op9kVnSso6Q" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+</div>
+
+<!-- Nutrition Table -->
+<h2>Nutrition</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Food Name</th>
+        <th>Protein (g)</th>
+        <th>Calories</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Chicken Breast (200g)</td>
+        <td>62</td>
+        <td>330</td>
+    </tr>
+    <tr>
+        <td>Salmon (150g)</td>
+        <td>34</td>
+        <td>350</td>
+    </tr>
+    <tr>
+        <td>Peanut Butter (2 tbsp)</td>
+        <td>8</td>
+        <td>190</td>
+    </tr>
+    <tr>
+        <td>Oats with Milk & Nuts</td>
+        <td>15</td>
+        <td>400</td>
+    </tr>
+    <tr>
+        <td>Whole Eggs (3 pcs)</td>
+        <td>18</td>
+        <td>210</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

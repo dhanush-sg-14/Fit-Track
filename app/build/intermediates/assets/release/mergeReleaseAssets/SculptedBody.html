@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>🔥 Sculpted Body Workout - FitTrack</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background: linear-gradient(to right, #e0f7fa, #e1f5fe);
+          margin: 0;
+          padding: 20px;
+        }
+
+        h1, h2 {
+          text-align: center;
+          color: #007bff;
+        }
+
+        .workout-container {
+          max-width: 700px;
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+        }
+
+        .exercise-card {
+          background-color: #ffffff;
+          border: 2px solid #007bff;
+          border-radius: 10px;
+          padding: 20px;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .exercise-title {
+          font-size: 22px;
+          color: #003d7a;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+
+        .timer-start-container {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          margin-bottom: 10px;
+        }
+
+        .timer {
+          font-size: 18px;
+          font-weight: bold;
+          color: #333;
+          min-width: 70px;
+          display: inline-block;
+        }
+
+        button {
+          padding: 8px 16px;
+          font-size: 14px;
+          border-radius: 6px;
+          background-color: #007bff;
+          color: white;
+          border: none;
+          cursor: pointer;
+        }
+
+        button:disabled {
+          background-color: #99cfff;
+          cursor: not-allowed;
+        }
+
+        a.tutorial-link {
+          color: #007bff;
+          text-decoration: none;
+          font-weight: 500;
+          display: inline-block;
+          margin-top: 10px;
+        }
+
+        a.tutorial-link:hover {
+          text-decoration: underline;
+        }
+
+        table {
+          width: 100%;
+          margin-top: 40px;
+          border-collapse: collapse;
+        }
+
+        th, td {
+          border: 1px solid #007bff;
+          padding: 12px;
+          text-align: center;
+        }
+
+        th {
+          background-color: #007bff;
+          color: white;
+        }
+
+        @media(max-width: 720px) {
+          .exercise-title {
+            font-size: 18px;
+          }
+        }
+    </style>
+</head>
+<body>
+
+<h1>🔥 Sculpted Body Workout</h1>
+
+<div class="workout-container">
+
+    <!-- Reverse Crunches -->
+    <div class="exercise-card">
+        <div class="exercise-title">Reverse Crunches – 30 reps</div>
+        <a href="https://www.youtube.com/watch?v=hyv14e2QDq0" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
+    <!-- Flutter Kicks -->
+    <div class="exercise-card">
+        <div class="exercise-title">Flutter Kicks – 50 sec</div>
+        <div class="timer-start-container">
+            <span id="timer1" class="timer">00:50</span>
+            <button onclick="startWorkout(50, 'timer1', this)">Start</button>
+        </div>
+        <a href="https://www.youtube.com/watch?v=K0zN3UuB3oM" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
+    <!-- Mountain Climbers -->
+    <div class="exercise-card">
+        <div class="exercise-title">Mountain Climbers – 50 sec</div>
+        <div class="timer-start-container">
+            <span id="timer2" class="timer">00:50</span>
+            <button onclick="startWorkout(50, 'timer2', this)">Start</button>
+        </div>
+        <a href="https://www.youtube.com/watch?v=nmwgirgXLYM" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
+    <!-- Heel Touches -->
+    <div class="exercise-card">
+        <div class="exercise-title">Heel Touches – 30 reps</div>
+        <a href="https://www.youtube.com/watch?v=Z1QJnTZ6XhU" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
+    <!-- Plank -->
+    <div class="exercise-card">
+        <div class="exercise-title">Plank – 50 sec</div>
+        <div class="timer-start-container">
+            <span id="timer3" class="timer">00:50</span>
+            <button onclick="startWorkout(50, 'timer3', this)">Start</button>
+        </div>
+        <a href="https://www.youtube.com/watch?v=pSHjTRCQxIw" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
+</div>
+
+<!-- Nutrition Table -->
+<h2>🥗 Nutrition </h2>
+<table>
+    <thead>
+    <tr>
+        <th>Food</th>
+        <th>Protein (g)</th>
+        <th>Calories</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>3 Egg Whites + 1 Whole Egg</td>
+        <td>11</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>Plain Greek Yogurt (150g)</td>
+        <td>10</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>Grilled Chicken Breast (100g)</td>
+        <td>31</td>
+        <td>165</td>
+    </tr>
+    <tr>
+        <td>Spinach Salad (no dressing)</td>
+        <td>2</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>Lentil Soup (1 cup)</td>
+        <td>12</td>
+        <td>150</td>
+    </tr>
+    </tbody>
+</table>
+
+<script>
+    let activeInterval = null;
+
+    function startWorkout(duration, timerId, button) {
+      if (activeInterval) clearInterval(activeInterval);
+
+      // Reset all timers and buttons
+      document.querySelectorAll('.timer').forEach(t => t.textContent = "00:40");
+      document.querySelectorAll('button').forEach(btn => {
+        btn.disabled = false;
+        btn.textContent = "Start";
+      });
+
+      let timer = duration;
+      const display = document.getElementById(timerId);
+      button.disabled = true;
+      button.textContent = "Running...";
+
+      activeInterval = setInterval(() => {
+        const seconds = timer % 60;
+        display.textContent = `00:${seconds < 10 ? '0' + seconds : seconds}`;
+        if (--timer < 0) {
+          clearInterval(activeInterval);
+          display.textContent = "Done!";
+          button.disabled = false;
+          button.textContent = "Restart";
+        }
+      }, 1000);
+    }
+</script>
+
+</body>
+</html>

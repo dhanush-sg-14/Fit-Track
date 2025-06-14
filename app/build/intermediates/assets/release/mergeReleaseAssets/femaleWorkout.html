@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Workout Goal - FitTrack (Female)</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .goal-options {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          margin-top: 20px;
+          flex-wrap: wrap;
+        }
+
+        .goal-btn {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 15px 20px;
+          border: 2px solid #333;
+          border-radius: 8px;
+          background-color: #f0f0f0;
+          cursor: pointer;
+          width: 150px;
+          transition: 0.3s;
+        }
+
+        .goal-btn.selected {
+          background-color: #d0f0ff;
+          border-color: #007bff;
+        }
+
+        .goal-btn img {
+          width: 60px;
+          height: 60px;
+          margin-bottom: 10px;
+        }
+
+        .goal-btn span {
+          font-size: 16px;
+          font-weight: 500;
+          text-align: center;
+        }
+
+        button#nextBtn {
+          margin-top: 30px;
+          padding: 10px 25px;
+          font-size: 16px;
+          border-radius: 6px;
+          cursor: pointer;
+        }
+    </style>
+</head>
+<body class="gender-body">
+<div class="gender-container">
+    <h2>Select Your Workout Goal</h2>
+
+    <div class="goal-options">
+        <button class="goal-btn" onclick="selectGoal('WeightLoss', this)">
+            <img src="https://img.icons8.com/fluency-systems-filled/96/weight.png" alt="Weight Loss" />
+            <span>Weight Loss</span>
+        </button>
+
+        <button class="goal-btn" onclick="selectGoal('MuscleGain', this)">
+            <img src="https://img.icons8.com/ios-filled/100/muscle.png" alt="Muscle Gain" />
+            <span>Muscle Gain</span>
+        </button>
+
+        <button class="goal-btn" onclick="selectGoal('SculptedBody', this)">
+            <img src="https://img.icons8.com/ios-filled/100/abs.png" alt="Sculpted Body" />
+            <span>Sculpted Body</span>
+        </button>
+
+        <button class="goal-btn" onclick="selectGoal('Yoga', this)">
+            <img src="https://img.icons8.com/ios-filled/100/yoga.png" alt="Yoga" />
+            <span>Yoga</span>
+        </button>
+    </div>
+
+    <div style="text-align: center;">
+        <button id="nextBtn" onclick="goToWorkoutPage()">Next</button>
+    </div>
+</div>
+
+<script>
+    let selectedGoal = null;
+
+    function selectGoal(goal, element) {
+      selectedGoal = goal;
+      localStorage.setItem("userWorkoutGoal", goal);
+
+      document.querySelectorAll('.goal-btn').forEach(btn =>
+        btn.classList.remove('selected')
+      );
+      element.classList.add('selected');
+    }
+
+    function goToWorkoutPage() {
+      if (!selectedGoal) {
+        alert("Please select a workout goal.");
+        return;
+      }
+
+      switch (selectedGoal) {
+        case 'WeightLoss':
+          window.location.href = "WeightLossF.html";
+          break;
+        case 'MuscleGain':
+          window.location.href = "MuscleGainF.html";
+          break;
+        case 'SculptedBody':
+          window.location.href = "SculptedBodyF.html";
+          break;
+        case 'Yoga':
+          window.location.href = "YogaF.html";
+          break;
+        default:
+          alert("Invalid selection.");
+      }
+    }
+</script>
+</body>
+</html>
