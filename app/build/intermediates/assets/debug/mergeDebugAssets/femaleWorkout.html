@@ -58,22 +58,22 @@
     <h2>Select Your Workout Goal</h2>
 
     <div class="goal-options">
-        <button class="goal-btn" onclick="selectGoal('weightLoss', this)">
+        <button class="goal-btn" onclick="selectGoal('WeightLoss', this)">
             <img src="https://img.icons8.com/fluency-systems-filled/96/weight.png" alt="Weight Loss" />
             <span>Weight Loss</span>
         </button>
 
-        <button class="goal-btn" onclick="selectGoal('muscleGain', this)">
+        <button class="goal-btn" onclick="selectGoal('MuscleGain', this)">
             <img src="https://img.icons8.com/ios-filled/100/muscle.png" alt="Muscle Gain" />
             <span>Muscle Gain</span>
         </button>
 
-        <button class="goal-btn" onclick="selectGoal('sculptedBody', this)">
+        <button class="goal-btn" onclick="selectGoal('SculptedBody', this)">
             <img src="https://img.icons8.com/ios-filled/100/abs.png" alt="Sculpted Body" />
             <span>Sculpted Body</span>
         </button>
 
-        <button class="goal-btn" onclick="selectGoal('yoga', this)">
+        <button class="goal-btn" onclick="selectGoal('Yoga', this)">
             <img src="https://img.icons8.com/ios-filled/100/yoga.png" alt="Yoga" />
             <span>Yoga</span>
         </button>
@@ -104,17 +104,17 @@
       }
 
       switch (selectedGoal) {
-        case 'weightLoss':
-          window.location.href = "femaleWeightLoss.html";
+        case 'WeightLoss':
+          window.location.href = "WeightLossF.html";
           break;
-        case 'muscleGain':
-          window.location.href = "femaleMuscleGain.html";
+        case 'MuscleGain':
+          window.location.href = "MuscleGainF.html";
           break;
-        case 'sculptedBody':
-          window.location.href = "femaleSculptedBody.html";
+        case 'SculptedBody':
+          window.location.href = "SculptedBodyF.html";
           break;
-        case 'yoga':
-          window.location.href = "femaleYoga.html";
+        case 'Yoga':
+          window.location.href = "YogaF.html";
           break;
         default:
           alert("Invalid selection.");

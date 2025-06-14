@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yoga & Mobility Workout - FitTrack</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background: linear-gradient(to right, #e0f7fa, #e1f5fe);
+          margin: 0;
+          padding: 20px;
+        }
+
+        h1, h2 {
+          text-align: center;
+          color: #007bff;
+        }
+
+        .workout-container {
+          max-width: 700px;
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+        }
+
+        .exercise-card {
+          background-color: #ffffff;
+          border: 2px solid #007bff;
+          border-radius: 10px;
+          padding: 20px;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .exercise-title {
+          font-size: 22px;
+          color: #003d7a;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+
+        .timer-start-container {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          margin-bottom: 10px;
+        }
+
+        .timer {
+          font-size: 18px;
+          font-weight: bold;
+          color: #333;
+          min-width: 70px;
+          display: inline-block;
+        }
+
+        button {
+          padding: 8px 16px;
+          font-size: 14px;
+          border-radius: 6px;
+          background-color: #007bff;
+          color: white;
+          border: none;
+          cursor: pointer;
+        }
+
+        button:disabled {
+          background-color: #99cfff;
+          cursor: not-allowed;
+        }
+
+        a.tutorial-link {
+          color: #007bff;
+          text-decoration: none;
+          font-weight: 500;
+          display: inline-block;
+          margin-top: 10px;
+        }
+
+        a.tutorial-link:hover {
+          text-decoration: underline;
+        }
+
+        table {
+          width: 100%;
+          margin-top: 40px;
+          border-collapse: collapse;
+        }
+
+        th, td {
+          border: 1px solid #007bff;
+          padding: 12px;
+          text-align: center;
+        }
+
+        th {
+          background-color: #007bff;
+          color: white;
+        }
+
+        @media(max-width: 720px) {
+          .exercise-title {
+            font-size: 18px;
+          }
+        }
+    </style>
+</head>
+<body>
+
+<h1>🧘 Yoga & Mobility Workout</h1>
+
+<div class="workout-container">
+
+    <!-- Surya Namaskar -->
+    <div class="exercise-card">
+        <div class="exercise-title">Surya Namaskar – 4 rounds</div>
+        <div class="timer-start-container">
+            <span id="timer1" class="timer">00:30</span>
+            <button onclick="startWorkout(30, 'timer1', this)">Start</button>
+        </div>
+        <a href="https://youtu.be/1xRX1MuoImw?si=2fkLQXinW4BL1t9W" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
+    <!-- Cat Cow Pose -->
+    <div class="exercise-card">
+        <div class="exercise-title">Cat Cow Pose – 10 reps</div>
+        <a href="https://www.youtube.com/watch?v=kqnua4rHVVA" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
+    <!-- Child's Pose -->
+    <div class="exercise-card">
+        <div class="exercise-title">Child's Pose – 10 breaths (approx 30 sec)</div>
+        <div class="timer-start-container">
+            <span id="timer2" class="timer">00:30</span>
+            <button onclick="startWorkout(30, 'timer2', this)">Start</button>
+        </div>
+        <a href="https://youtu.be/nMp3MlTz9fA?si=qNiLC3CPvGI50pcx" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
+    <!-- Supine Twist -->
+    <div class="exercise-card">
+        <div class="exercise-title">Supine Twist – 10 reps (each side)</div>
+        <a href="https://youtube.com/shorts/CjgM_Jd-14U?si=rEsHfHHlfOJRVchi" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
+    <!-- Knee Rotation -->
+    <div class="exercise-card">
+        <div class="exercise-title">Knee Rotation – 10 reps (each side)</div>
+        <a href="https://youtube.com/shorts/i8ynz665Ty8?si=tuqB6fOWqezZsup1" class="tutorial-link" target="_blank">Watch Tutorial</a>
+    </div>
+
+</div>
+
+<!-- Nutrition Table -->
+<h2>🥗 Nutrition </h2>
+<table>
+    <thead>
+    <tr>
+        <th>Food</th>
+        <th>Calcium (mg)</th>
+        <th>Magnesium (mg)</th>
+        <th>Potassium (mg)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Spinach (1 cup cooked)</td>
+        <td>245</td>
+        <td>157</td>
+        <td>839</td>
+    </tr>
+    <tr>
+        <td>Almonds (28g / 23 nuts)</td>
+        <td>76</td>
+        <td>80</td>
+        <td>208</td>
+    </tr>
+    <tr>
+        <td>Banana (1 medium)</td>
+        <td>6</td>
+        <td>32</td>
+        <td>422</td>
+    </tr>
+    <tr>
+        <td>Yogurt (1 cup plain, low-fat)</td>
+        <td>415</td>
+        <td>47</td>
+        <td>573</td>
+    </tr>
+    <tr>
+        <td>Broccoli (1 cup cooked)</td>
+        <td>62</td>
+        <td>51</td>
+        <td>457</td>
+    </tr>
+    </tbody>
+</table>
+
+<script>
+    let activeInterval = null;
+
+    function startWorkout(duration, timerId, button) {
+      if (activeInterval) clearInterval(activeInterval);
+
+      // Reset all timers and buttons
+      document.querySelectorAll('.timer').forEach(t => {
+        const defaultTimes = {
+          timer1: '00:30',
+          timer2: '00:30',
+          timer3: '00:40',
+          timer4: '00:40',
+          timer5: '00:40',
+        };
+        t.textContent = defaultTimes[t.id] || "00:30";
+      });
+      document.querySelectorAll('button').forEach(btn => {
+        btn.disabled = false;
+        btn.textContent = "Start";
+      });
+
+      let timer = duration;
+      const display = document.getElementById(timerId);
+      button.disabled = true;
+      button.textContent = "Running...";
+
+      activeInterval = setInterval(() => {
+        const seconds = timer % 60;
+        display.textContent = `00:${seconds < 10 ? '0' + seconds : seconds}`;
+        if (--timer < 0) {
+          clearInterval(activeInterval);
+          display.textContent = "Done!";
+          button.disabled = false;
+          button.textContent = "Restart";
+        }
+      }, 1000);
+    }
+</script>
+
+</body>
+</html>
