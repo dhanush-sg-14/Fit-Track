@@ -2,7 +2,7 @@
 
 Welcome to *FitTrack* – your all-in-one companion for fitness tracking, workout planning, and diet management. Whether you're trying to build muscle, lose weight, or just stay active and healthy, FitTrack helps you stay on top of your goals.
 
-![FitTrack Banner](./screenshots/banner.png)
+
 
 ---
 
@@ -14,10 +14,7 @@ Welcome to *FitTrack* – your all-in-one companion for fitness tracking, workou
   - Choose workouts based on your fitness level and goal
 - 🥗 *Diet Plans*
   - Get daily meal plans based on your preferences
-- 📅 *Progress Tracking*
-  - Track your weight, calories, workouts, and nutrition
-- 🧘‍♀ *Wellness Tips*
-  - Healthy tips, water reminders, and more
+
 
 ---
 
