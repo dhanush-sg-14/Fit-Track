@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    environment {
+        JAVA_HOME = '/usr/lib/jvm/java-17-openjdk-amd64'
+        ANDROID_HOME = '/opt/android-sdk'
+        PATH = "${PATH}:${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/platform-tools"
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/dhanush-sg-14/Fit-Track'
+            }
+        }
+
+        stage('Build APK') {
+            steps {
+                sh './gradlew clean assembleDebug'
+            }
+        }
+
+        stage('Archive APK') {
+            steps {
+                archiveArtifacts artifacts: '/*.apk', allowEmptyArchive: true
+            }
+        }
+    }
+}
